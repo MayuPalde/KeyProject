@@ -125,7 +125,6 @@
     <Compile Include="StepDefinitions\ListAsRentalSteps.cs" />
     <Compile Include="StepDefinitions\LoginSteps.cs" />
     <Compile Include="StepDefinitions\SendRequestSteps.cs" />
-    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

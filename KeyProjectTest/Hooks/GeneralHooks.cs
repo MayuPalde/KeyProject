@@ -19,17 +19,12 @@ namespace KeyProjectTest.Hooks
     {
 
 
-        //Global Variable for Extent report
+       
         private static ExtentTest featureName;
         private static ExtentTest scenario;
         private static ExtentReports extent;
-
-
        
-
-
-
-
+           
         private IWebDriver _driver;
 
 
@@ -42,10 +37,12 @@ namespace KeyProjectTest.Hooks
             var htmlReporter = new ExtentHtmlReporter(@"C:\Users\Mayuri\Desktop\KeyProject\TestResults\ExtentReport.html");
 
             htmlReporter.Configuration().Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Dark;
-            //Attach report to reporter
+           
             extent = new ExtentReports();
 
             extent.AttachReporter(htmlReporter);
+
+          
 
 
 
@@ -72,7 +69,7 @@ namespace KeyProjectTest.Hooks
         public static void BeforeFeature()
         {
            
-            //Create dynamic feature name
+           
             featureName = extent.CreateTest<Feature>(FeatureContext.Current.FeatureInfo.Title);
 
           
@@ -122,11 +119,6 @@ namespace KeyProjectTest.Hooks
 
             }
 
-
-
-
-
-
         }
 
         [BeforeScenario]
@@ -136,11 +128,6 @@ namespace KeyProjectTest.Hooks
 
 
             _driver = new ChromeDriver();
-
-            //Create dynamic scenario name
-        
-
-
 
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(20);
 
