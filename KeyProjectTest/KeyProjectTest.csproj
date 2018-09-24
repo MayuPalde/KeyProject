@@ -93,57 +93,89 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Features\AddTenant.feature.cs">
+    <Compile Include="Features\AddNewRequest.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AddTenant.feature</DependentUpon>
+      <DependentUpon>AddNewRequest.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\ListAsRental.feature.cs">
+    <Compile Include="Features\DeleteAcceptedAndDeclinedRequest.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ListAsRental.feature</DependentUpon>
+      <DependentUpon>DeleteAcceptedAndDeclinedRequest.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\DeleteRequest.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeleteRequest.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\DetailsOfAcceptedAndDeclinedRequest.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DetailsOfAcceptedAndDeclinedRequest.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Features\EditRequest.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EditRequest.feature</DependentUpon>
     </Compile>
     <Compile Include="Features\Login.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Login.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\SendRequest.feature.cs">
+    <Compile Include="Features\SeeDetailsFeature.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SendRequest.feature</DependentUpon>
+      <DependentUpon>SeeDetailsFeature.feature</DependentUpon>
     </Compile>
     <Compile Include="Hooks\GeneralHooks.cs" />
-    <Compile Include="Pages\AddTenantDetailsPage.cs" />
-    <Compile Include="Pages\LiabilityDetailsPage.cs" />
-    <Compile Include="Pages\ListRentalPropertyPage.cs" />
+    <Compile Include="Pages\AcceptedRequestPage.cs" />
+    <Compile Include="Pages\AddNewRequestPage.cs" />
+    <Compile Include="Pages\DeclinedRequestPage.cs" />
+    <Compile Include="Pages\DeleteRequestPage.cs" />
+    <Compile Include="Pages\EditRequestPage.cs" />
     <Compile Include="Pages\LoginPage.cs" />
-    <Compile Include="Pages\MyPropertiesPage.cs" />
-    <Compile Include="Pages\SendRequestPage.cs" />
-    <Compile Include="Pages\SummaryPage.cs" />
-    <Compile Include="StepDefinitions\AddTenantSteps.cs" />
-    <Compile Include="StepDefinitions\ListAsRentalSteps.cs" />
+    <Compile Include="Pages\MyRequestsPage.cs" />
+    <Compile Include="Pages\OwnersDashboardPage.cs" />
+    <Compile Include="Pages\RequestDetailsPage.cs" />
+    <Compile Include="StepDefinitions\AddNewRequestSteps.cs" />
+    <Compile Include="StepDefinitions\DeleteAcceptedAndDeclinedRequestSteps.cs" />
+    <Compile Include="StepDefinitions\DeleteRequestSteps.cs" />
+    <Compile Include="StepDefinitions\DetailsOfAcceptedAndDeclinedRequestSteps.cs" />
+    <Compile Include="StepDefinitions\EditRequestSteps.cs" />
     <Compile Include="StepDefinitions\LoginSteps.cs" />
-    <Compile Include="StepDefinitions\SendRequestSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StepDefinitions\SeeDetailsFeatureSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Features\AddTenant.feature">
+    <None Include="Features\AddNewRequest.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>AddTenant.feature.cs</LastGenOutput>
+      <LastGenOutput>AddNewRequest.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\ListAsRental.feature">
+    <None Include="Features\DeleteAcceptedAndDeclinedRequest.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ListAsRental.feature.cs</LastGenOutput>
+      <LastGenOutput>DeleteAcceptedAndDeclinedRequest.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\DeleteRequest.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DeleteRequest.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\DetailsOfAcceptedAndDeclinedRequest.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DetailsOfAcceptedAndDeclinedRequest.feature.cs</LastGenOutput>
+    </None>
+    <None Include="Features\EditRequest.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>EditRequest.feature.cs</LastGenOutput>
     </None>
     <None Include="Features\Login.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Login.feature.cs</LastGenOutput>
     </None>
-    <None Include="Features\SendRequest.feature">
+    <None Include="Features\SeeDetailsFeature.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>SendRequest.feature.cs</LastGenOutput>
+      <LastGenOutput>SeeDetailsFeature.feature.cs</LastGenOutput>
     </None>
     <None Include="license" />
     <None Include="packages.config">

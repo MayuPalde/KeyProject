@@ -1,4 +1,5 @@
-﻿using AventStack.ExtentReports;
+﻿
+using AventStack.ExtentReports;
 using AventStack.ExtentReports.Gherkin.Model;
 using AventStack.ExtentReports.Reporter;
 using OpenQA.Selenium;
@@ -13,116 +14,56 @@ using TechTalk.SpecFlow;
 
 namespace KeyProjectTest.Hooks
 {
-
     [TechTalk.SpecFlow.Binding]
    public  class GeneralHooks
+
     {
 
 
-       
-        private static ExtentTest featureName;
+        private static ExtentTest feature;
         private static ExtentTest scenario;
-        private static ExtentReports extent;
-       
-           
-        private IWebDriver _driver;
+        private static ExtentReports Extent = new ExtentReports();
 
+        private IWebDriver _driver;
 
 
         [BeforeTestRun]
         public static void InitializeReport()
         {
-
-            //Initialize Extent report before test starts
-            var htmlReporter = new ExtentHtmlReporter(@"C:\Users\Mayuri\Desktop\KeyProject\TestResults\ExtentReport.html");
+            var htmlReporter = new ExtentHtmlReporter(@"C:\Users\Mayuri\Desktop\Visual studio Program\Key_Seperate_Module\KeyProject\TestResults\ExtentReport.html");
 
             htmlReporter.Configuration().Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Dark;
-           
-            extent = new ExtentReports();
 
-            extent.AttachReporter(htmlReporter);
-
-          
-
-
-
-
+            Extent = new ExtentReports();
+            Extent.AttachReporter(htmlReporter);
         }
-
-
 
         [AfterTestRun]
-        public static void TearDownReport()
-
+        public static void TeardownReport()
         {
-           
-            //Flush report once test completes
-            extent.Flush();
-
+            Extent.Flush();
 
         }
 
-
-
         [BeforeFeature]
-
         public static void BeforeFeature()
         {
            
-           
-            featureName = extent.CreateTest<Feature>(FeatureContext.Current.FeatureInfo.Title);
+            feature = Extent.CreateTest<Feature>(FeatureContext.Current.FeatureInfo.Title);
 
-          
+
 
         }
-
-         
-
-
         [AfterStep]
-
-        public void InsertReportingSteps()
+        public static void InsertReportingSteps()
         {
-
-
-
-            var stepType = ScenarioStepContext.Current.StepInfo.StepDefinitionType.ToString();
-
-
-          // all step definition  cover
-
-
-            if (ScenarioContext.Current.TestError == null)
-
-            {
-
-                if (stepType == "Given")
-                    scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text);
-                else if (stepType == "When")
-                    scenario.CreateNode<When>(ScenarioStepContext.Current.StepInfo.Text);
-                else if (stepType == "Then")
-                    scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text);
-                else if (stepType == "And")
-                    scenario.CreateNode<And>(ScenarioStepContext.Current.StepInfo.Text);
-            }
-
-            else if (ScenarioContext.Current.TestError != null)
-            {
-
-                if (stepType == "Given")
-                    scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.InnerException);
-                else if (stepType == "When")
-                    scenario.CreateNode<When>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.InnerException);
-                else if (stepType == "Then")
-                    scenario.CreateNode<Then>(ScenarioStepContext.Current.StepInfo.Text).Fail(ScenarioContext.Current.TestError.Message);
-
-
-            }
+            scenario.CreateNode<Given>(ScenarioStepContext.Current.StepInfo.Text);
 
         }
+
+
 
         [BeforeScenario]
-
         public void RunBeforeScenario()
         {
 
@@ -137,7 +78,8 @@ namespace KeyProjectTest.Hooks
 
             ScenarioContext.Current.Add("currentDriver", _driver);
 
-            scenario = featureName.CreateNode<Scenario>(ScenarioContext.Current.ScenarioInfo.Title);
+           scenario = feature.CreateNode<Scenario>(ScenarioContext.Current.ScenarioInfo.Title);
+
 
 
 
@@ -149,10 +91,12 @@ namespace KeyProjectTest.Hooks
         {
 
 
-            _driver.Quit();
-
+           _driver.Quit();
 
         }
+
+
+
 
 
 

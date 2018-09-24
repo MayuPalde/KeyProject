@@ -18,20 +18,21 @@ namespace KeyProjectTest.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("ListAsRental")]
-    public partial class ListAsRentalFeature
+    [NUnit.Framework.DescriptionAttribute("SeeDetailsFeature")]
+    public partial class SeeDetailsFeatureFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "ListAsRental.feature"
+#line 1 "SeeDetailsFeature.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ListAsRental", "\tAs a property owner \r\n\tI want be able to add my property as a Rental Property", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SeeDetailsFeature", "\tIn order to  see the deatils of my request\r\n\tAs a property owner\r\n\tI want to be " +
+                    "already send the request to my property tenant", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -70,25 +71,25 @@ namespace KeyProjectTest.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add property as a rental property")]
+        [NUnit.Framework.DescriptionAttribute("As a owner I am able to see request details which is sent by me")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        public virtual void AddPropertyAsARentalProperty()
+        public virtual void AsAOwnerIAmAbleToSeeRequestDetailsWhichIsSentByMe()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add property as a rental property", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("As a owner I am able to see request details which is sent by me", null, new string[] {
                         "mytag"});
-#line 9
+#line 8
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
+#line 9
+ testRunner.Given("I  logged  into the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
- testRunner.Given("I Log in into the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.And("I navigated to MyRequest page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
-  testRunner.And("I navigate to List rental property page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I navigated to Request Detials page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
- testRunner.And("I fill all the details of List Rental Property page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 14
- testRunner.When("I click on Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 15
- testRunner.Then("I should navigate to Rental Listing And Tenant Application page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.When("I click on Back To Previous link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 13
+ testRunner.Then("I am able to navigate to My request page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

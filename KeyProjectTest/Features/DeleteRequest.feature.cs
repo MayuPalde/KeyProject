@@ -18,20 +18,21 @@ namespace KeyProjectTest.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("AddTenant")]
-    public partial class AddTenantFeature
+    [NUnit.Framework.DescriptionAttribute("DeleteRequest")]
+    public partial class DeleteRequestFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "AddTenant.feature"
+#line 1 "DeleteRequest.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "AddTenant", "\tAs a Property Owner\r\n\tI want to be able to add new tenant to my property ", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "DeleteRequest", "\tIn order to  Delete the request\r\n\tAs a property owner \r\n\tI want to be already se" +
+                    "nd the request to my property tenant ", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -70,25 +71,25 @@ namespace KeyProjectTest.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add Tenant to the property")]
+        [NUnit.Framework.DescriptionAttribute("Delete Tenant Request if it is not valid")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        public virtual void AddTenantToTheProperty()
+        public virtual void DeleteTenantRequestIfItIsNotValid()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add Tenant to the property", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete Tenant Request if it is not valid", null, new string[] {
                         "mytag"});
-#line 6
+#line 10
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 7
- testRunner.Given("I log in into the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 8
- testRunner.And("I fill the Tenant details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 9
- testRunner.And("I fill the Liability details page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.When("I click on \'Sumbit\' button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I logged in into the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 12
+ testRunner.And("I navigated to Myrequest page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
- testRunner.Then("Tenant Should be added to the property", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I navigated to Delete Request page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 14
+ testRunner.When("I click on Confirm button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 15
+ testRunner.Then("I am able see \"Item Deleted Successfully!\" message on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

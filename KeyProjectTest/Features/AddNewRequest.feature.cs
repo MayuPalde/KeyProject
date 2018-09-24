@@ -18,21 +18,21 @@ namespace KeyProjectTest.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Login")]
-    public partial class LoginFeature
+    [NUnit.Framework.DescriptionAttribute("AddNewRequest")]
+    public partial class AddNewRequestFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "Login.feature"
+#line 1 "AddNewRequest.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Login", "\tIn order to see my properties\r\n\tAs a Property Owner \r\n\tI want be able to login t" +
-                    "o the dashboard ", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "AddNewRequest", "\tIn order to send new request to the tenant\r\n\tAs a property owner\r\n\tI want to hav" +
+                    "e a tenant to my property ", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -71,21 +71,27 @@ namespace KeyProjectTest.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Successful Login By Owner")]
-        [NUnit.Framework.CategoryAttribute("login")]
-        public virtual void SuccessfulLoginByOwner()
+        [NUnit.Framework.DescriptionAttribute("Send New Request to the tenant")]
+        [NUnit.Framework.CategoryAttribute("mytag")]
+        public virtual void SendNewRequestToTheTenant()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Successful Login By Owner", null, new string[] {
-                        "login"});
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Send New Request to the tenant", null, new string[] {
+                        "mytag"});
 #line 7
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
- testRunner.Given("I Navigate to the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have logged in into the Application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
- testRunner.When("I login with Username and Password on the Login Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I navigated to My Request page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
- testRunner.Then("Owners dashboard page should be seen on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.And("I Clicked on Add New Request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 11
+ testRunner.And("I filled all the inforamtion on My request page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 15
+ testRunner.When("I clicked on Save button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 16
+ testRunner.Then("I can see \"Request Sent Successfully!\" message on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

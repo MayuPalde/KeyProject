@@ -2,6 +2,8 @@
 using OpenQA.Selenium;
 using NUnit.Framework;
 using KeyProjectTest.Pages;
+using OpenQA.Selenium.Support.UI;
+using System;
 
 namespace KeyProjectTest.StepDefinitions
 {
@@ -11,10 +13,13 @@ namespace KeyProjectTest.StepDefinitions
 
         private readonly  IWebDriver _driver;
 
+       
+
+
         public LoginSteps()
         {
 
-
+            
             _driver = ScenarioContext.Current.Get<IWebDriver>("currentDriver");                
                 
         }
@@ -23,8 +28,10 @@ namespace KeyProjectTest.StepDefinitions
         [Given(@"I Navigate to the login page")]
         public void GivenINavigateToTheLoginPage()
         {
-            
-            _driver.Navigate().GoToUrl("http://dev.property.community/Account/Login?ReturnUrl=%2fPropertyOwners");
+
+
+            _driver.Navigate().GoToUrl("http://new-keys.azurewebsites.net/Account/Login");
+      
             
         }
 
@@ -37,8 +44,22 @@ namespace KeyProjectTest.StepDefinitions
 
             LoginPage login = new LoginPage(_driver);
 
-            login.LoginAs("apachedemo123@gmail.com" , "Owner@123");
+            login.LoginAs("vincent.nguyen@mvpstudio.co.nz", "ntmv2682");
 
+            OwnersDashboardPage dashboard = new OwnersDashboardPage(_driver);
+
+            dashboard.ClickOnSkip();
+
+            System.Threading.Thread.Sleep(2000);
+
+            dashboard.ClickOnOwner();
+
+
+            System.Threading.Thread.Sleep(2000);
+
+            dashboard.ClickOnMyRequestLink();
+
+            
 
 
 
@@ -49,6 +70,7 @@ namespace KeyProjectTest.StepDefinitions
         
         [Then(@"Owners dashboard page should be seen on the screen")]
         public void ThenOwnersDashboardPageShouldBeSeenOnTheScreen()
+
         {
 
 

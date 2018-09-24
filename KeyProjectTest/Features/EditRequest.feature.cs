@@ -18,21 +18,21 @@ namespace KeyProjectTest.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("SendRequest")]
-    public partial class SendRequestFeature
+    [NUnit.Framework.DescriptionAttribute("EditRequest")]
+    public partial class EditRequestFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "SendRequest.feature"
+#line 1 "EditRequest.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "SendRequest", "\tIn order to inform to my Tenant\r\n\tAs a proprty Owner \r\n\tI want to be able send r" +
-                    "equest to them regarding routine inspection", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "EditRequest", "\tIn order to edit the request\r\n\tAs a property owner \r\n\tI want to be alredy send t" +
+                    "he request to my property tenant", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -71,25 +71,27 @@ namespace KeyProjectTest.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Send request to the tenant for routine inspection")]
+        [NUnit.Framework.DescriptionAttribute("Edit Tenant Request By sending new Periodic inspection date to the tenant")]
         [NUnit.Framework.CategoryAttribute("mytag")]
-        public virtual void SendRequestToTheTenantForRoutineInspection()
+        public virtual void EditTenantRequestBySendingNewPeriodicInspectionDateToTheTenant()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Send request to the tenant for routine inspection", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Edit Tenant Request By sending new Periodic inspection date to the tenant", null, new string[] {
                         "mytag"});
 #line 7
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
+#line 8
+ testRunner.Given("I have logged in into the application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
- testRunner.Given("I Log in into the Application", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.And("I navigated to My request page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
- testRunner.And("I navigate to General Request Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I navigated to Edit request Page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.And("I fill all the information regarding routine inspection request", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I Enter New inspection date in description", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 12
+ testRunner.And("I  Click on Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
- testRunner.When("I click on Save Button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 14
- testRunner.Then("Request should be successfully send to the respective tenant", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("I am able to see \"Item Edited Successfully!\" message on the screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
